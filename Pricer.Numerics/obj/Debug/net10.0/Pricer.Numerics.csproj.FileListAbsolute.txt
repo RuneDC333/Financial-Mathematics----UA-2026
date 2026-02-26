@@ -1,0 +1,13 @@
+C:\Users\erwin\source\repos\PricerTemplate\Pricer.Numerics\bin\Debug\net10.0\Pricer.Numerics.deps.json
+C:\Users\erwin\source\repos\PricerTemplate\Pricer.Numerics\bin\Debug\net10.0\Pricer.Numerics.dll
+C:\Users\erwin\source\repos\PricerTemplate\Pricer.Numerics\bin\Debug\net10.0\Pricer.Numerics.pdb
+C:\Users\erwin\source\repos\PricerTemplate\Pricer.Numerics\obj\Debug\net10.0\Pricer.Numerics.csproj.AssemblyReference.cache
+C:\Users\erwin\source\repos\PricerTemplate\Pricer.Numerics\obj\Debug\net10.0\Pricer.Numerics.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erwin\source\repos\PricerTemplate\Pricer.Numerics\obj\Debug\net10.0\Pricer.Numerics.AssemblyInfoInputs.cache
+C:\Users\erwin\source\repos\PricerTemplate\Pricer.Numerics\obj\Debug\net10.0\Pricer.Numerics.AssemblyInfo.cs
+C:\Users\erwin\source\repos\PricerTemplate\Pricer.Numerics\obj\Debug\net10.0\Pricer.Numerics.csproj.CoreCompileInputs.cache
+C:\Users\erwin\source\repos\PricerTemplate\Pricer.Numerics\obj\Debug\net10.0\Pricer.Numerics.sourcelink.json
+C:\Users\erwin\source\repos\PricerTemplate\Pricer.Numerics\obj\Debug\net10.0\Pricer.Numerics.dll
+C:\Users\erwin\source\repos\PricerTemplate\Pricer.Numerics\obj\Debug\net10.0\refint\Pricer.Numerics.dll
+C:\Users\erwin\source\repos\PricerTemplate\Pricer.Numerics\obj\Debug\net10.0\Pricer.Numerics.pdb
+C:\Users\erwin\source\repos\PricerTemplate\Pricer.Numerics\obj\Debug\net10.0\ref\Pricer.Numerics.dll
