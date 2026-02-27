@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erwin\\source\\repos\\PricerTemplate\\Pricer.Web\\Pricer.Web.csproj": {}
+    "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Web\\Pricer.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erwin\\source\\repos\\PricerTemplate\\Pricer.Numerics\\Pricer.Numerics.csproj": {
+    "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Numerics\\Pricer.Numerics.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erwin\\source\\repos\\PricerTemplate\\Pricer.Numerics\\Pricer.Numerics.csproj",
+        "projectUniqueName": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Numerics\\Pricer.Numerics.csproj",
         "projectName": "Pricer.Numerics",
-        "projectPath": "C:\\Users\\erwin\\source\\repos\\PricerTemplate\\Pricer.Numerics\\Pricer.Numerics.csproj",
+        "projectPath": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Numerics\\Pricer.Numerics.csproj",
         "packagesPath": "C:\\Users\\erwin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erwin\\source\\repos\\PricerTemplate\\Pricer.Numerics\\obj\\",
+        "outputPath": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Numerics\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -349,14 +349,14 @@
         }
       }
     },
-    "C:\\Users\\erwin\\source\\repos\\PricerTemplate\\Pricer.Web\\Pricer.Web.csproj": {
+    "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Web\\Pricer.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erwin\\source\\repos\\PricerTemplate\\Pricer.Web\\Pricer.Web.csproj",
+        "projectUniqueName": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Web\\Pricer.Web.csproj",
         "projectName": "Pricer.Web",
-        "projectPath": "C:\\Users\\erwin\\source\\repos\\PricerTemplate\\Pricer.Web\\Pricer.Web.csproj",
+        "projectPath": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Web\\Pricer.Web.csproj",
         "packagesPath": "C:\\Users\\erwin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erwin\\source\\repos\\PricerTemplate\\Pricer.Web\\obj\\",
+        "outputPath": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -377,8 +377,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\erwin\\source\\repos\\PricerTemplate\\Pricer.Numerics\\Pricer.Numerics.csproj": {
-                "projectPath": "C:\\Users\\erwin\\source\\repos\\PricerTemplate\\Pricer.Numerics\\Pricer.Numerics.csproj"
+              "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Numerics\\Pricer.Numerics.csproj": {
+                "projectPath": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Numerics\\Pricer.Numerics.csproj"
               }
             }
           }

@@ -1,5 +1,4 @@
 ﻿@page "/blackscholespricer"
-@rendermode InteractiveServer
 @using MudBlazor
 @using Pricer.Numerics
 
@@ -71,7 +70,7 @@
                Color="Color.Secondary"
                OnClick="ComputeImpliedVol"
                Class="mt-2 mb-2">
-        Compute Black-Scholes IV
+        Compute Black-Scholes Vol
     </MudButton>
 
     @if (impliedVol.HasValue)
@@ -85,7 +84,7 @@
                Color="Color.Info"
                OnClick="ComputeBachelierImpliedVol"
                Class="mt-2 mb-2">
-        Compute Bachelier IV (ATM)
+        Compute Bachelier Vol (ATM)
     </MudButton>
 
     @if (bachelierImpliedVol.HasValue)

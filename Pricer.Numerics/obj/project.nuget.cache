@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZYK6nK6zKh0=",
+  "dgSpecHash": "a2Xl5w1jzF4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\erwin\\source\\repos\\PricerTemplate\\Pricer.Numerics\\Pricer.Numerics.csproj",
+  "projectFilePath": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Numerics\\Pricer.Numerics.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\erwin\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512"
   ],
