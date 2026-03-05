@@ -1,0 +1,145 @@
+﻿@page "/diffusivescaling"
+@using MudBlazor
+@using MathNet.Numerics.Distributions
+
+<MudPaper Class="pa-6">
+
+    <MudText Typo="Typo.caption" Class="mt-2">
+		This slider illustrates the effect of the scaling exponent α on the path of a diffusive process.
+        For α greater than 1, the stochastic process will explode, for α smaller than 1, the stochastic process will 
+        be frozen (i.e. deterministic)
+        and for α equal to 1, we get a Brownian motion.
+    </MudText>
+
+    <MudText Typo="Typo.h4">Diffusive Scaling</MudText>
+
+    <!-- Slider controlling α -->
+    <MudSlider T="double"
+               Min="0.1"
+               Max="2"
+               Step="0.1"
+               Value="_alpha"
+               ValueChanged="OnSliderChanged"
+               Label="Scaling exponent α" />
+
+    <MudChart T="double"
+              ChartType="ChartType.Line"
+              ChartSeries="_series"
+              XAxisLabels="_labels"
+              Width="100%"
+              Height="400px" />
+
+    <MudText Typo="Typo.caption" Class="mt-2">
+        Note: We used n = 500. Also, for visualization purposes, the increments are multiplied by a constant factor (90) to make the path
+        clearly visible within the chart's default vertical range [-20, 20]. This rescaling does not affect the qualitative
+        behavior of the diffusive scaling process.
+    </MudText>
+
+</MudPaper>
+
+@code {
+
+    /*
+    -----------------------------------------------------
+    SCALING EXPONENT PARAMETER
+    -----------------------------------------------------
+    */
+
+    // α in diffusive scaling (increments ~ dt^α)
+    private double _alpha = 1.0;
+
+    /*
+    -----------------------------------------------------
+    CHART DATA
+    -----------------------------------------------------
+    */
+
+    private List<ChartSeries<double>> _series = new();
+    private string[] _labels = Array.Empty<string>();
+
+    /*
+    -----------------------------------------------------
+    SLIDER EVENT
+    -----------------------------------------------------
+    */
+
+    private void OnSliderChanged(double value)
+    {
+        _alpha = value;
+        GeneratePath();
+    }
+
+    /*
+    -----------------------------------------------------
+    INITIAL PAGE LOAD
+    -----------------------------------------------------
+    */
+
+    protected override void OnInitialized()
+    {
+        GeneratePath();
+    }
+
+    /*
+    -----------------------------------------------------
+    DIFFUSIVE SCALING PATH GENERATION
+    -----------------------------------------------------
+
+    X_i = Normal(0, 1) * (dt)^α
+
+    where
+
+    dt = 1/N
+    α = scaling exponent controlled by slider
+    */
+
+    private void GeneratePath()
+    {
+        int N = 500;                // total number of steps
+        double dt = 1.0 / N;        // time increment
+
+        var rand = new Random();
+
+        double[] path = new double[N];
+
+        for (int i = 1; i < N; i++)
+        {
+            // Gaussian increment scaled by dt^α and visual amplification factor
+            double increment = 90 * Normal.Sample(rand, 0, 1) * Math.Pow(dt, _alpha);
+
+            // cumulative sum to form path
+            path[i] = path[i - 1] + increment;
+        }
+
+        /*
+        -----------------------------------------------------
+        CREATE CHART DATA
+        -----------------------------------------------------
+        */
+
+        _series = new List<ChartSeries<double>>
+        {
+            new ChartSeries<double>
+            {
+                Name = $"α = {_alpha:F2}",
+                Data = path.ToList()
+            }
+        };
+
+        /*
+        -----------------------------------------------------
+        X-AXIS LABELS (step index)
+        -----------------------------------------------------
+        */
+
+        _labels = Enumerable.Range(0, N).Select(x => x.ToString()).ToArray();
+
+        /*
+        -----------------------------------------------------
+        Force chart refresh
+        -----------------------------------------------------
+        */
+
+        StateHasChanged();
+    }
+}

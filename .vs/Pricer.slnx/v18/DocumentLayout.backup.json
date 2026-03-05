@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9525F6EF-BDE8-27C5-E546-255749B89A2F}|Pricer.Web\\Pricer.Web.csproj|c:\\users\\erwin\\source\\repos\\financial-mathematics----ua-2026\\pricer.web\\components\\pages\\brownianmotion.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9525F6EF-BDE8-27C5-E546-255749B89A2F}|Pricer.Web\\Pricer.Web.csproj|solutionrelative:pricer.web\\components\\pages\\brownianmotion.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9525F6EF-BDE8-27C5-E546-255749B89A2F}|Pricer.Web\\Pricer.Web.csproj|c:\\users\\erwin\\source\\repos\\financial-mathematics----ua-2026\\pricer.web\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9525F6EF-BDE8-27C5-E546-255749B89A2F}|Pricer.Web\\Pricer.Web.csproj|solutionrelative:pricer.web\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9525F6EF-BDE8-27C5-E546-255749B89A2F}|Pricer.Web\\Pricer.Web.csproj|c:\\users\\erwin\\source\\repos\\financial-mathematics----ua-2026\\pricer.web\\components\\pages\\diffusivescaling.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9525F6EF-BDE8-27C5-E546-255749B89A2F}|Pricer.Web\\Pricer.Web.csproj|solutionrelative:pricer.web\\components\\pages\\diffusivescaling.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9525F6EF-BDE8-27C5-E546-255749B89A2F}|Pricer.Web\\Pricer.Web.csproj|c:\\users\\erwin\\source\\repos\\financial-mathematics----ua-2026\\pricer.web\\components\\pages\\blackscholespricer.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9525F6EF-BDE8-27C5-E546-255749B89A2F}|Pricer.Web\\Pricer.Web.csproj|solutionrelative:pricer.web\\components\\pages\\blackscholespricer.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -18,30 +30,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Web\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Pricer.Web\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Web\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "Pricer.Web\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-05T18:22:25.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DiffusiveScaling.razor",
+              "DocumentMoniker": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Web\\Components\\Pages\\DiffusiveScaling.razor",
+              "RelativeDocumentMoniker": "Pricer.Web\\Components\\Pages\\DiffusiveScaling.razor",
+              "ToolTip": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Web\\Components\\Pages\\DiffusiveScaling.razor",
+              "RelativeToolTip": "Pricer.Web\\Components\\Pages\\DiffusiveScaling.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-05T18:21:17.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "BrownianMotion.razor",
+              "DocumentMoniker": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Web\\Components\\Pages\\BrownianMotion.razor",
+              "RelativeDocumentMoniker": "Pricer.Web\\Components\\Pages\\BrownianMotion.razor",
+              "ToolTip": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Web\\Components\\Pages\\BrownianMotion.razor*",
+              "RelativeToolTip": "Pricer.Web\\Components\\Pages\\BrownianMotion.razor*",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-05T18:18:14.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "BlackScholesPricer.razor",
               "DocumentMoniker": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Web\\Components\\Pages\\BlackScholesPricer.razor",
               "RelativeDocumentMoniker": "Pricer.Web\\Components\\Pages\\BlackScholesPricer.razor",
               "ToolTip": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Web\\Components\\Pages\\BlackScholesPricer.razor",
               "RelativeToolTip": "Pricer.Web\\Components\\Pages\\BlackScholesPricer.razor",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAEYAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-02-27T09:57:05.607Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "BlackScholes.cs",
               "DocumentMoniker": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Numerics\\BlackScholes.cs",
               "RelativeDocumentMoniker": "Pricer.Numerics\\BlackScholes.cs",
               "ToolTip": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Numerics\\BlackScholes.cs",
               "RelativeToolTip": "Pricer.Numerics\\BlackScholes.cs",
-              "ViewState": "AgIAAIgAAAAAAAAAAADwv5YAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-27T09:51:55.057Z",
               "EditorCaption": ""

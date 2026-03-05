@@ -1,0 +1,145 @@
+﻿@page "/brownianmotion"
+@using MudBlazor
+
+<MudPaper Class="pa-6">
+
+    <MudText Typo="Typo.caption" Class="mt-2">
+		This slider illustrates the convergence of a scaled random walk to Brownian motion as the number of steps n increases.
+        As n grows larger, the path becomes more irregular and starts to resemble the continuous, but nowhere differentiable,
+        paths of Brownian motion.
+    </MudText>
+
+    <MudText Typo="Typo.h4">
+        Scaled Random Walk → Brownian Motion
+    </MudText>
+
+    <!-- Slider controlling n -->
+    <MudSlider T="double"
+               Min="10"
+               Max="1000"
+               Step="10"
+               Value="_n"
+               ValueChanged="OnSliderChanged"
+               Label="Number of steps n" />
+
+    <MudChart T="double"
+              ChartType="ChartType.Line"
+              ChartSeries="_series"
+              XAxisLabels="_labels"
+              Width="100%"
+              Height="400px" />
+
+    <MudText Typo="Typo.caption" Class="mt-2">
+        Note: For visualization purposes, the increments of the scaled random walk are multiplied by a constant factor (5)
+        to make the path clearly visible within the default vertical range [-20 ... 20] of the chart. This rescaling does not affect
+        the qualitative convergence of the process to Brownian motion.
+    </MudText>
+
+</MudPaper>
+
+@code {
+
+    /*
+    -----------------------------------------------------
+    SLIDER PARAMETER
+    -----------------------------------------------------
+    */
+
+    // n in W^(n)(t)
+    private double _n = 100;
+
+    /*
+    -----------------------------------------------------
+    CHART DATA
+    -----------------------------------------------------
+    */
+
+    private List<ChartSeries<double>> _series = new();
+    private string[] _labels = Array.Empty<string>();
+
+    /*
+    -----------------------------------------------------
+    SLIDER EVENT
+    -----------------------------------------------------
+    */
+
+    private void OnSliderChanged(double value)
+    {
+        _n = value;
+        GeneratePath();
+    }
+
+    /*
+    -----------------------------------------------------
+    INITIAL PAGE LOAD
+    -----------------------------------------------------
+    */
+
+    protected override void OnInitialized()
+    {
+        GeneratePath();
+    }
+
+    /*
+    -----------------------------------------------------
+    SCALED RANDOM WALK GENERATION
+    -----------------------------------------------------
+
+    W^(n)(t) = (1/sqrt(n)) * sum_{j=1}^{floor(nt)} X_j
+
+    where
+
+    X_j = +1 or -1 with probability 1/2
+    */
+
+    private void GeneratePath()
+    {
+        int n = (int)_n;
+
+        var rand = new Random();
+
+        double[] path = new double[n + 1];
+
+        for (int j = 1; j <= n; j++)
+        {
+            // Variable: +1 or -1 with probability 1/2
+            int Xj = rand.NextDouble() < 0.5 ? -1 : 1;
+
+			// scaled increment (we also multiply by a constant factor of 5 to make the path more visible in the chart).
+            double increment = 5 * Xj / Math.Sqrt(n);
+
+            path[j] = path[j - 1] + increment;
+        }
+
+        /*
+        -----------------------------------------------------
+        CREATE CHART DATA
+        -----------------------------------------------------
+        */
+
+        _series = new List<ChartSeries<double>>
+        {
+            new ChartSeries<double>
+            {
+                Name = $"n = {n}",
+                Data = path.ToList()
+            }
+        };
+
+        /*
+        -----------------------------------------------------
+        X-AXIS LABELS (time t = j/n)
+        -----------------------------------------------------
+        */
+
+        _labels = Enumerable.Range(0, n + 1)
+            .Select(i => (i / (double)n).ToString("0.00"))
+            .ToArray();
+
+        /*
+        Force chart refresh
+        */
+
+        StateHasChanged();
+    }
+}
