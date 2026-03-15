@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Pricer.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d49e0a4fd16186054c944d7ba8497fbfc206a96e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+33bdcee0ff25eff4567b5273f90e0df511b93b16")]
 [assembly: System.Reflection.AssemblyProductAttribute("Pricer.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Pricer.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

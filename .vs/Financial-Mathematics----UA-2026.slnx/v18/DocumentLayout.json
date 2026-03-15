@@ -38,8 +38,7 @@
               "RelativeToolTip": "Pricer.Web\\Components\\App.razor",
               "ViewState": "AgIAAAIAAAAAAAAAAAAAAAoAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-27T09:18:33.629Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-27T09:18:33.629Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "Pricer.Web\\Components\\Pages\\BlackScholesPricer.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-26T17:33:55.873Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-26T17:33:55.873Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "RelativeToolTip": "Pricer.Numerics\\BlackScholes.cs",
               "ViewState": "AgIAAIUAAAAAAAAAAAAqwI4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T17:40:10.095Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-26T17:40:10.095Z"
             }
           ]
         }

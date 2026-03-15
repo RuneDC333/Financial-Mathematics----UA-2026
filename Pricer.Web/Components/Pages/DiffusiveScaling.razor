@@ -1,6 +1,6 @@
 ﻿@page "/diffusivescaling"
 @using MudBlazor
-@using MathNet.Numerics.Distributions
+@using Pricer.Numerics
 
 <MudPaper Class="pa-6">
 
@@ -12,6 +12,19 @@
     </MudText>
 
     <MudText Typo="Typo.h4">Diffusive Scaling</MudText>
+
+    <!--- Button to generate a new random path with a different seed. --->
+    <MudText Typo="Typo.caption">
+        Random seed: @_seed
+    </MudText>
+    <MudButton Variant="Variant.Filled"
+               Color="Color.Primary"
+               OnClick="GenerateNewPath"
+               Class="mb-2">
+
+        Generate New Random Path
+
+    </MudButton>
 
     <!-- Slider controlling α -->
     <MudSlider T="double"
@@ -38,6 +51,15 @@
 </MudPaper>
 
 @code {
+
+    // Seed for reproducibility of the random walk paths.
+    private int _seed = 1234;
+    private Random _seedGenerator = new();
+    private void GenerateNewPath()
+    {
+        _seed = _seedGenerator.Next();
+        GeneratePath();
+    }
 
     /*
     -----------------------------------------------------
@@ -95,51 +117,26 @@
 
     private void GeneratePath()
     {
-        int N = 500;                // total number of steps
-        double dt = 1.0 / N;        // time increment
+        int N = 500;
 
-        var rand = new Random();
-
-        double[] path = new double[N];
-
-        for (int i = 1; i < N; i++)
-        {
-            // Gaussian increment scaled by dt^α and visual amplification factor
-            double increment = 90 * Normal.Sample(rand, 0, 1) * Math.Pow(dt, _alpha);
-
-            // cumulative sum to form path
-            path[i] = path[i - 1] + increment;
-        }
-
-        /*
-        -----------------------------------------------------
-        CREATE CHART DATA
-        -----------------------------------------------------
-        */
+        var path = DiffusiveScalingGenerator.GeneratePath(N, _alpha, _seed);
 
         _series = new List<ChartSeries<double>>
+    {
+        // Make the chart.
+        new ChartSeries<double>
         {
-            new ChartSeries<double>
-            {
-                Name = $"α = {_alpha:F2}",
-                Data = path.ToList()
-            }
-        };
+            Name = $"α = {_alpha:F2}",
+            Data = path.ToList()
+        }
+    };
+        
+        // Generate x-asis labels.
+        _labels = Enumerable.Range(0, N)
+            .Select(x => x.ToString())
+            .ToArray();
 
-        /*
-        -----------------------------------------------------
-        X-AXIS LABELS (step index)
-        -----------------------------------------------------
-        */
-
-        _labels = Enumerable.Range(0, N).Select(x => x.ToString()).ToArray();
-
-        /*
-        -----------------------------------------------------
-        Force chart refresh
-        -----------------------------------------------------
-        */
-
+        // Refresh the chart with the new data.
         StateHasChanged();
     }
 }

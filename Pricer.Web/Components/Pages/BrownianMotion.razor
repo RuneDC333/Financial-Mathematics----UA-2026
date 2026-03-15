@@ -1,5 +1,6 @@
 ﻿@page "/brownianmotion"
 @using MudBlazor
+@using Pricer.Numerics
 
 <MudPaper Class="pa-6">
 
@@ -12,6 +13,19 @@
     <MudText Typo="Typo.h4">
         Scaled Random Walk → Brownian Motion
     </MudText>
+
+    <!--- Button to generate a new random path with a different seed. --->
+    <MudText Typo="Typo.caption">
+        Random seed: @_seed
+    </MudText>
+    <MudButton Variant="Variant.Filled"
+               Color="Color.Primary"
+               OnClick="GenerateNewPath"
+               Class="mb-2">
+
+        Generate New Random Path
+
+    </MudButton>
 
     <!-- Slider controlling n -->
     <MudSlider T="double"
@@ -38,6 +52,15 @@
 </MudPaper>
 
 @code {
+
+    // Seed for reproducibility of the random walk paths.
+    private int _seed = 1234;
+    private Random _seedGenerator = new();
+    private void GenerateNewPath()
+    {
+        _seed = _seedGenerator.Next();
+        GeneratePath();
+    }
 
     /*
     -----------------------------------------------------
@@ -96,50 +119,24 @@
     {
         int n = (int)_n;
 
-        var rand = new Random();
-
-        double[] path = new double[n + 1];
-
-        for (int j = 1; j <= n; j++)
-        {
-            // Variable: +1 or -1 with probability 1/2
-            int Xj = rand.NextDouble() < 0.5 ? -1 : 1;
-
-			// scaled increment (we also multiply by a constant factor of 5 to make the path more visible in the chart).
-            double increment = 5 * Xj / Math.Sqrt(n);
-
-            path[j] = path[j - 1] + increment;
-        }
-
-        /*
-        -----------------------------------------------------
-        CREATE CHART DATA
-        -----------------------------------------------------
-        */
+        var path = BrownianMotionGenerator.GenerateScaledRandomWalk(n, _seed);
 
         _series = new List<ChartSeries<double>>
+    {
+        // ChartSeries for the scaled random walk path.
+        new ChartSeries<double>
         {
-            new ChartSeries<double>
-            {
-                Name = $"n = {n}",
-                Data = path.ToList()
-            }
-        };
-
-        /*
-        -----------------------------------------------------
-        X-AXIS LABELS (time t = j/n)
-        -----------------------------------------------------
-        */
-
+            Name = $"n = {n}",
+            Data = path.ToList()
+        }
+    };
+        
+        // Generate axis and labels for the x-axis (time points).
         _labels = Enumerable.Range(0, n + 1)
             .Select(i => (i / (double)n).ToString("0.00"))
             .ToArray();
 
-        /*
-        Force chart refresh
-        */
-
+        // Update the chart with the new data.
         StateHasChanged();
     }
 }

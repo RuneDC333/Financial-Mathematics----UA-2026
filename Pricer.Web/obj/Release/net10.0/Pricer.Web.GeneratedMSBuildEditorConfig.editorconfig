@@ -33,8 +33,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCbGFja1NjaG9sZXNQcmljZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/erwin/source/repos/Financial-Mathematics----UA-2026/Pricer.Web/Components/Pages/BrownianMotion.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCcm93bmlhbk1vdGlvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/erwin/source/repos/Financial-Mathematics----UA-2026/Pricer.Web/Components/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/erwin/source/repos/Financial-Mathematics----UA-2026/Pricer.Web/Components/Pages/DiffusiveScaling.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEaWZmdXNpdmVTY2FsaW5nLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/erwin/source/repos/Financial-Mathematics----UA-2026/Pricer.Web/Components/Pages/Error.razor]

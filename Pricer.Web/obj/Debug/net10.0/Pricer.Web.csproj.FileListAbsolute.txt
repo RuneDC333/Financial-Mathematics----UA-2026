@@ -177,8 +177,6 @@ C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\obj\Debu
 C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\obj\Debug\net10.0\compressed\x76f5uuuhw-{0}-4d85u1mtcx-4d85u1mtcx.gz
 C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\obj\Debug\net10.0\compressed\vubb4y6e3a-{0}-0j3bgjxly4-0j3bgjxly4.gz
 C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\obj\Debug\net10.0\compressed\xw4v1vt3mz-{0}-13ja33weya-13ja33weya.gz
-C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\obj\Debug\net10.0\compressed\7se2u0lh6z-{0}-2i0r6wwb69-2i0r6wwb69.gz
-C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\obj\Debug\net10.0\compressed\5lqna5zxbk-{0}-iz83ucvm53-iz83ucvm53.gz
 C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\obj\Debug\net10.0\compressed\dhnppg5s4z-{0}-g7ghsip8mo-g7ghsip8mo.gz
 C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\obj\Debug\net10.0\compressed\rlo395091z-{0}-g7ghsip8mo-g7ghsip8mo.gz
 C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\obj\Debug\net10.0\staticwebassets.build.json
@@ -190,3 +188,5 @@ C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\obj\Debu
 C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\obj\Debug\net10.0\Pricer.Web.csproj.Up2Date
 C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\obj\Debug\net10.0\Pricer.Web.genruntimeconfig.cache
 C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\obj\Debug\net10.0\ref\Pricer.Web.dll
+C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\obj\Debug\net10.0\compressed\7se2u0lh6z-{0}-mgww215af1-mgww215af1.gz
+C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\obj\Debug\net10.0\compressed\5lqna5zxbk-{0}-dy8h75y8gn-dy8h75y8gn.gz

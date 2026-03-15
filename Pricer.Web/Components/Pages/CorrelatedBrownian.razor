@@ -1,0 +1,105 @@
+﻿@page "/correlatedbrownian"
+@using MudBlazor
+@using Pricer.Numerics
+
+<MudPaper Class="pa-6">
+
+    <MudText Typo="Typo.caption" Class="mt-2">
+        This slider illustrates two correlated Brownian motions.
+    </MudText>
+
+    <MudText Typo="Typo.h4">
+        Correlated Brownian Motions
+    </MudText>
+
+    <!--- Button to generate a new random path with a different seed. --->
+    <MudText Typo="Typo.caption">
+        Random seed: @_seed
+    </MudText>
+    <MudButton Variant="Variant.Filled"
+               Color="Color.Primary"
+               OnClick="GenerateNewPath"
+               Class="mb-2">
+
+        Generate New Random Path
+
+    </MudButton>
+
+    <MudSlider T="double"
+               Min="-0.99"
+               Max="0.99"
+               Step="0.01"
+               Value="_rho"
+               ValueChanged="OnSliderChanged"
+               Label="Correlation ρ" />
+
+    <MudChart T="double"
+              ChartType="ChartType.Line"
+              ChartSeries="_series"
+              XAxisLabels="_labels"
+              Width="100%"
+              Height="400px" />
+
+    <MudText Typo="Typo.caption" Class="mt-2">
+        Note: For visualization purposes, the increments are multiplied by a constant factor (5) to make the path
+        clearly visible within the chart's default vertical range [-20, 20]. This rescaling does not affect the qualitative
+        behavior of the diffusive scaling process.
+    </MudText>
+
+</MudPaper>
+
+@code {
+
+    // Seed for reproducibility of the random walk paths.
+    private int _seed = 1234;
+    private Random _seedGenerator = new();
+    private void GenerateNewPath()
+    {
+        _seed = _seedGenerator.Next();
+        GeneratePaths();
+    }
+
+    private double _rho = 0.0;
+
+    private List<ChartSeries<double>> _series = new();
+    private string[] _labels = Array.Empty<string>();
+
+    protected override void OnInitialized()
+    {
+        GeneratePaths();
+    }
+
+    private void OnSliderChanged(double value)
+    {
+        _rho = value;
+        GeneratePaths();
+    }
+
+    private void GeneratePaths()
+    {
+        int N = 500;
+
+        var (W1, W3) = CorrelatedBrownianGenerator.Generate(N, _rho, _seed);
+
+        _series = new List<ChartSeries<double>>
+    {
+        new ChartSeries<double>
+        {
+            Name = "W1",
+            Data = W1.ToList()
+        },
+        new ChartSeries<double>
+        {
+            Name = $"W3 (ρ={_rho:F2})",
+            Data = W3.ToList()
+        }
+    };
+
+        _labels = Enumerable.Range(0, N)
+            .Select(x => x.ToString())
+            .ToArray();
+
+        StateHasChanged();
+    }
+
+}
