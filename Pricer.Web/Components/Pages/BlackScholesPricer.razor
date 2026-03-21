@@ -101,6 +101,32 @@
         </MudAlert>
     }
 
+    <!-- Visualization of the Black-Scholes value against S. We add a slider where we can change the time to maturity.->
+    <MudDivider Class="my-4" />
+
+    <MudText Typo="Typo.h6">
+        Time-to-Maturity Visualization
+    </MudText>
+
+    <MudSlider T="double"
+               Min="0.001"
+               Max="2"
+               Step="0.01"
+               Value="_chartT"
+               ValueChanged="OnTimeSliderChanged"
+               Label="Time to Maturity (T)" />
+
+    <MudChart T="double"
+              ChartType="ChartType.Line"
+              ChartSeries="_chartSeries"
+              XAxisLabels="_chartLabels"
+              Width="100%"
+              Height="400px" />
+
+    <MudText Typo="Typo.caption" Class="mt-2">
+        As time to maturity decreases, the Black-Scholes price converges to the intrinsic value (option payoff).
+    </MudText>
+
 </MudPaper>
 @code {
 
@@ -120,6 +146,10 @@
     private int maxIterations = 100;
     private double? impliedVol;
     private double? bachelierImpliedVol;
+
+    private double _chartT = 1.0;
+    private List<ChartSeries<double>> _chartSeries = new();
+    private string[] _chartLabels = Array.Empty<string>();
 
     private void CalculatePrice()
     {
@@ -142,6 +172,48 @@
         errorMessage = $"Error: {ex.Message}";
         price = null;
     }
+    }
+
+    private void OnTimeSliderChanged(double value)
+    {
+        _chartT = value;
+        GenerateChart();
+    }
+
+    private void GenerateChart()
+    {
+        var (Svalues, prices, payoff) =
+            BlackScholesVisualizer.GeneratePriceCurve(
+                optionType,
+                interestRate,
+                _chartT,
+                volatility,
+                strike);
+
+        _chartSeries = new List<ChartSeries<double>>
+    {
+        new ChartSeries<double>
+        {
+            Name = $"BS Price (T={_chartT:F2})",
+            Data = prices.ToList()
+        },
+        new ChartSeries<double>
+        {
+            Name = "Payoff",
+            Data = payoff.ToList()
+        }
+    };
+
+        _chartLabels = Svalues
+            .Select(s => s.ToString("F0"))
+            .ToArray();
+
+        StateHasChanged();
+    }
+
+    protected override void OnInitialized()
+    {
+        GenerateChart();
     }
 
     private void ComputeImpliedVol()
