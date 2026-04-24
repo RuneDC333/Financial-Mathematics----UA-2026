@@ -9,6 +9,7 @@
       "Pricer.Web/1.0.0": {
         "dependencies": {
           "MudBlazor": "9.0.0",
+          "Plotly.Blazor": "7.1.0",
           "Pricer.Numerics": "1.0.0"
         },
         "runtime": {
@@ -28,6 +29,14 @@
           "lib/net10.0/MudBlazor.dll": {
             "assemblyVersion": "9.0.0.0",
             "fileVersion": "9.0.0.0"
+          }
+        }
+      },
+      "Plotly.Blazor/7.1.0": {
+        "runtime": {
+          "lib/net10.0/Plotly.Blazor.dll": {
+            "assemblyVersion": "7.1.0.0",
+            "fileVersion": "7.1.0.0"
           }
         }
       },
@@ -63,6 +72,13 @@
       "sha512": "sha512-sXE0gH+yuJe4bkfz0EqFI9LV+9M0ofMoyVUIWohtx1ofXNhV5fsjl/3NBsTzjQsU5y4qdOyBGedybpT1zL5C5g==",
       "path": "mudblazor/9.0.0",
       "hashPath": "mudblazor.9.0.0.nupkg.sha512"
+    },
+    "Plotly.Blazor/7.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D2Wcnx+SpDQR8xhHlDT16q9lqvOzFPIXPIIXpNVT0yGxyteAy5gjyrtIPqg83HOTQylW6Rf6oX61WZ/lEW0acA==",
+      "path": "plotly.blazor/7.1.0",
+      "hashPath": "plotly.blazor.7.1.0.nupkg.sha512"
     },
     "Pricer.Numerics/1.0.0": {
       "type": "project",

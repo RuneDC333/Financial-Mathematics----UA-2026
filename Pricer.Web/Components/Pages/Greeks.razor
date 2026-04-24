@@ -1,0 +1,153 @@
+@page "/greeks"
+@using Pricer.Numerics
+@using MudBlazor
+
+<MudPaper Class="pa-6" Elevation="2">
+    <MudText Typo="Typo.h4" Class="mb-2">Greeks</MudText>
+    <MudText Typo="Typo.subtitle2" Class="mb-4">
+        Fixed parameters: K = 100, r = 5%, T₀ = 1
+    </MudText>
+
+    <MudSelect T="StrategyType"
+               Label="Strategy"
+               Value="_strategy"
+               ValueChanged="OnStrategyChanged"
+               Class="mb-4"
+               Style="max-width:260px">
+        <MudSelectItem Value="StrategyType.Call">Call</MudSelectItem>
+        <MudSelectItem Value="StrategyType.Put">Put</MudSelectItem>
+        <MudSelectItem Value="StrategyType.CallSpread">Call Spread</MudSelectItem>
+        <MudSelectItem Value="StrategyType.Straddle">Straddle</MudSelectItem>
+        <MudSelectItem Value="StrategyType.Butterfly">Butterfly</MudSelectItem>
+    </MudSelect>
+
+    <MudText>Time to Maturity (T): <b>@_T.ToString("F2")</b></MudText>
+    <MudSlider T="double"
+               Min="0.02" Max="2.0" Step="0.01"
+               Value="_T"
+               ValueChanged="OnTimeChanged"
+               Class="mb-2" />
+
+    <MudText>Volatility (σ): <b>@_sigma.ToString("F2")</b></MudText>
+    <MudSlider T="double"
+               Min="0.01" Max="1.0" Step="0.01"
+               Value="_sigma"
+               ValueChanged="OnVolChanged"
+               Class="mb-4" />
+
+    <MudGrid>
+        <MudItem xs="12" md="6">
+            <MudText Typo="Typo.subtitle1" Class="mb-1"><b>Price</b></MudText>
+            <PlotlyChart @ref="_priceChart" Config="_config" Layout="_priceLayout" Data="_priceData" />
+        </MudItem>
+
+        <MudItem xs="12" md="6">
+            <MudText Typo="Typo.subtitle1" Class="mb-1"><b>Delta</b></MudText>
+            <PlotlyChart @ref="_deltaChart" Config="_config" Layout="_deltaLayout" Data="_deltaData" />
+        </MudItem>
+
+        <MudItem xs="12" md="4">
+            <MudText Typo="Typo.subtitle1" Class="mb-1"><b>Gamma</b></MudText>
+            <PlotlyChart @ref="_gammaChart" Config="_config" Layout="_smallLayout" Data="_gammaData" />
+        </MudItem>
+
+        <MudItem xs="12" md="4">
+            <MudText Typo="Typo.subtitle1" Class="mb-1"><b>Theta</b></MudText>
+            <PlotlyChart @ref="_thetaChart" Config="_config" Layout="_smallLayout" Data="_thetaData" />
+        </MudItem>
+
+        <MudItem xs="12" md="4">
+            <MudText Typo="Typo.subtitle1" Class="mb-1"><b>Vega</b></MudText>
+            <PlotlyChart @ref="_vegaChart" Config="_config" Layout="_smallLayout" Data="_vegaData" />
+        </MudItem>
+    </MudGrid>
+</MudPaper>
+
+@code {
+    // ── Parameters ──────────────────────────────────────────────────────────
+    private StrategyType _strategy = StrategyType.Call;
+    private double _T = 1.0;
+    private double _sigma = 0.2;
+    private const double _r = 0.05;
+    private const double _K = 100.0;
+
+    // ── Chart references ────────────────────────────────────────────────────
+    private PlotlyChart? _priceChart;
+    private PlotlyChart? _deltaChart;
+    private PlotlyChart? _gammaChart;
+    private PlotlyChart? _thetaChart;
+    private PlotlyChart? _vegaChart;
+
+    // ── Shared Plotly config ────────────────────────────────────────────────
+    private Config _config = new()
+    {
+        Responsive = true,
+        DisplayModeBar = Plotly.Blazor.ConfigLib.DisplayModeBarEnum.False
+    };
+
+    private Layout _priceLayout = MakeLayout(300);
+    private Layout _deltaLayout = MakeLayout(300);
+    private Layout _smallLayout = MakeLayout(240);
+
+    private static Layout MakeLayout(int height) => new()
+    {
+        Height = height,
+        Margin = new Plotly.Blazor.LayoutLib.Margin { L = 45, R = 15, T = 10, B = 40 },
+        ShowLegend = true,
+        PaperBgColor = "rgba(0,0,0,0)",
+        PlotBgColor = "rgba(0,0,0,0)",
+        XAxis = new[] { new Plotly.Blazor.LayoutLib.XAxis { Title = new Plotly.Blazor.LayoutLib.XAxisLib.Title { Text = "S" } } }
+    };
+
+    // ── Data lists (Initialized with empty traces) ──────────────────────────
+    private IList<ITrace> _priceData = new List<ITrace>
+    {
+        new Scatter { Name = "BS Price", Mode = ModeFlag.Lines, Line = new Plotly.Blazor.Traces.ScatterLib.Line { Color = "#1976D2", Width = 2 } },
+        new Scatter { Name = "Intrinsic", Mode = ModeFlag.Lines, Line = new Plotly.Blazor.Traces.ScatterLib.Line { Color = "#FF9800", Width = 2, Dash = "dash" } }
+    };
+    private IList<ITrace> _deltaData = new List<ITrace> { new Scatter { Name = "Delta", Mode = ModeFlag.Lines, Line = new Plotly.Blazor.Traces.ScatterLib.Line { Color = "#1976D2", Width = 2 } } };
+    private IList<ITrace> _gammaData = new List<ITrace> { new Scatter { Name = "Gamma", Mode = ModeFlag.Lines, Line = new Plotly.Blazor.Traces.ScatterLib.Line { Color = "#388E3C", Width = 2 } } };
+    private IList<ITrace> _thetaData = new List<ITrace> { new Scatter { Name = "Theta", Mode = ModeFlag.Lines, Line = new Plotly.Blazor.Traces.ScatterLib.Line { Color = "#D32F2F", Width = 2 } } };
+    private IList<ITrace> _vegaData = new List<ITrace> { new Scatter { Name = "Vega", Mode = ModeFlag.Lines, Line = new Plotly.Blazor.Traces.ScatterLib.Line { Color = "#7B1FA2", Width = 2 } } };
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await RefreshCharts();
+        }
+    }
+
+    private async Task OnStrategyChanged(StrategyType v) { _strategy = v; await RefreshCharts(); }
+    private async Task OnTimeChanged(double v) { _T = v; await RefreshCharts(); }
+    private async Task OnVolChanged(double v) { _sigma = v; await RefreshCharts(); }
+
+    private async Task RefreshCharts()
+    {
+        // 1. Compute the math via your Numerics engine
+        var (S, price, payoff, delta, gamma, theta, vega) = GreeksVisualizer.Generate(_strategy, _r, _T, _sigma, _K);
+
+        // 2. Format the data for Plotly
+        var x = S.Select(v => (object)Math.Round(v, 2)).ToList();
+        var toObj = (double[] arr) => arr.Select(v => (object)Math.Round(v, 5)).ToList();
+
+        // 3. Update the existing trace objects rather than creating new ones
+        ((Scatter)_priceData[0]).X = x; ((Scatter)_priceData[0]).Y = toObj(price);
+        ((Scatter)_priceData[1]).X = x; ((Scatter)_priceData[1]).Y = toObj(payoff);
+
+        ((Scatter)_deltaData[0]).X = x; ((Scatter)_deltaData[0]).Y = toObj(delta);
+        ((Scatter)_gammaData[0]).X = x; ((Scatter)_gammaData[0]).Y = toObj(gamma);
+        ((Scatter)_thetaData[0]).X = x; ((Scatter)_thetaData[0]).Y = toObj(theta);
+        ((Scatter)_vegaData[0]).X = x; ((Scatter)_vegaData[0]).Y = toObj(vega);
+
+        // 4. Tell JS to redraw the charts with the new data
+        var tasks = new List<Task>();
+        if (_priceChart != null) tasks.Add(_priceChart.React());
+        if (_deltaChart != null) tasks.Add(_deltaChart.React());
+        if (_gammaChart != null) tasks.Add(_gammaChart.React());
+        if (_thetaChart != null) tasks.Add(_thetaChart.React());
+        if (_vegaChart != null) tasks.Add(_vegaChart.React());
+
+        await Task.WhenAll(tasks);
+    }
+}

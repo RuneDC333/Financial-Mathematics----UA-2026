@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "+evEWK65qKg=",
+  "dgSpecHash": "jewsuCVfa5w=",
   "success": true,
   "projectFilePath": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Web\\Pricer.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\erwin\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
-    "C:\\Users\\erwin\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.4\\microsoft.aspnetcore.app.internal.assets.10.0.4.nupkg.sha512",
-    "C:\\Users\\erwin\\.nuget\\packages\\mudblazor\\9.0.0\\mudblazor.9.0.0.nupkg.sha512"
+    "C:\\Users\\erwin\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.5\\microsoft.aspnetcore.app.internal.assets.10.0.5.nupkg.sha512",
+    "C:\\Users\\erwin\\.nuget\\packages\\mudblazor\\9.0.0\\mudblazor.9.0.0.nupkg.sha512",
+    "C:\\Users\\erwin\\.nuget\\packages\\plotly.blazor\\7.1.0\\plotly.blazor.7.1.0.nupkg.sha512"
   ],
   "logs": []
 }

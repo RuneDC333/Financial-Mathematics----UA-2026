@@ -17,7 +17,7 @@ build_property.RootNamespace = Pricer.Web
 build_property.ProjectDir = C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
-build_property.RazorLangVersion = 9.0
+build_property.RazorLangVersion = 10.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web
@@ -51,6 +51,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/erwin/source/repos/Financial-Mathematics----UA-2026/Pricer.Web/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/erwin/source/repos/Financial-Mathematics----UA-2026/Pricer.Web/Components/Pages/Greeks.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xHcmVla3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/erwin/source/repos/Financial-Mathematics----UA-2026/Pricer.Web/Components/Pages/Home.razor]

@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net10.0": {
       "MathNet.Numerics/5.0.0": {
@@ -15,7 +15,7 @@
           }
         }
       },
-      "Microsoft.AspNetCore.App.Internal.Assets/10.0.4": {
+      "Microsoft.AspNetCore.App.Internal.Assets/10.0.5": {
         "type": "package",
         "build": {
           "build/Microsoft.AspNetCore.App.Internal.Assets.props": {},
@@ -43,6 +43,25 @@
         },
         "buildMultiTargeting": {
           "buildMultiTargeting/MudBlazor.props": {}
+        }
+      },
+      "Plotly.Blazor/7.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Plotly.Blazor.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Plotly.Blazor.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Plotly.Blazor.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Plotly.Blazor.props": {}
         }
       },
       "Pricer.Numerics/1.0.0": {
@@ -83,10 +102,10 @@
         "mathnet.numerics.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.App.Internal.Assets/10.0.4": {
-      "sha512": "M942X5Vy726SlvFBuoAC4cDczEMlPAFt1mmyFlrkw/QcpdVwVU0DkF4P9JabxX6eWNm9RvaYZHe25FN7oXoxpQ==",
+    "Microsoft.AspNetCore.App.Internal.Assets/10.0.5": {
+      "sha512": "Oxw9Ps1/nd6c/EMCAI13AeJFEqXezAvCEOshMjUWmL7LeGirHJNzytR2e/3jINYg0j2TmPvNUowGHf+gp8zDSQ==",
       "type": "package",
-      "path": "microsoft.aspnetcore.app.internal.assets/10.0.4",
+      "path": "microsoft.aspnetcore.app.internal.assets/10.0.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -102,7 +121,7 @@
         "build/Microsoft.AspNetCore.App.Internal.Assets.targets",
         "buildMultiTargeting/Microsoft.AspNetCore.App.Internal.Assets.targets",
         "buildTransitive/Microsoft.AspNetCore.App.Internal.Assets.targets",
-        "microsoft.aspnetcore.app.internal.assets.10.0.4.nupkg.sha512",
+        "microsoft.aspnetcore.app.internal.assets.10.0.5.nupkg.sha512",
         "microsoft.aspnetcore.app.internal.assets.nuspec"
       ]
     },
@@ -137,6 +156,31 @@
         "staticwebassets/MudBlazor.min.js.map"
       ]
     },
+    "Plotly.Blazor/7.1.0": {
+      "sha512": "D2Wcnx+SpDQR8xhHlDT16q9lqvOzFPIXPIIXpNVT0yGxyteAy5gjyrtIPqg83HOTQylW6Rf6oX61WZ/lEW0acA==",
+      "type": "package",
+      "path": "plotly.blazor/7.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/Plotly.Blazor.props",
+        "buildMultiTargeting/Plotly.Blazor.props",
+        "buildTransitive/Plotly.Blazor.props",
+        "lib/net10.0/Plotly.Blazor.dll",
+        "lib/net10.0/Plotly.Blazor.xml",
+        "lib/net8.0/Plotly.Blazor.dll",
+        "lib/net8.0/Plotly.Blazor.xml",
+        "lib/net9.0/Plotly.Blazor.dll",
+        "lib/net9.0/Plotly.Blazor.xml",
+        "plotly.blazor.7.1.0.nupkg.sha512",
+        "plotly.blazor.nuspec",
+        "staticwebassets/plotly-3.5.0.min.js",
+        "staticwebassets/plotly-basic-3.5.0.min.js",
+        "staticwebassets/plotly-interop-7.1.0.js"
+      ]
+    },
     "Pricer.Numerics/1.0.0": {
       "type": "project",
       "path": "../Pricer.Numerics/Pricer.Numerics.csproj",
@@ -145,8 +189,9 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "Microsoft.AspNetCore.App.Internal.Assets >= 10.0.4",
+      "Microsoft.AspNetCore.App.Internal.Assets >= 10.0.5",
       "MudBlazor >= 9.0.0",
+      "Plotly.Blazor >= 7.1.0",
       "Pricer.Numerics >= 1.0.0"
     ]
   },
@@ -199,7 +244,7 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
       "net10.0": {
@@ -209,12 +254,16 @@
           "Microsoft.AspNetCore.App.Internal.Assets": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[10.0.4, )",
+            "version": "[10.0.5, )",
             "autoReferenced": true
           },
           "MudBlazor": {
             "target": "Package",
             "version": "[9.0.0, )"
+          },
+          "Plotly.Blazor": {
+            "target": "Package",
+            "version": "[7.1.0, )"
           }
         },
         "imports": [
@@ -236,7 +285,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300-preview.0.26177.108/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

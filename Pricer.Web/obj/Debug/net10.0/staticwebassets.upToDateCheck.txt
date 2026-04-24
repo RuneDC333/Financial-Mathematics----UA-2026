@@ -1,5 +1,5 @@
-C:\Users\erwin\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.4\build\..\_framework\blazor.server.js
-C:\Users\erwin\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.4\build\..\_framework\blazor.web.js
+C:\Users\erwin\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.5\build\..\_framework\blazor.server.js
+C:\Users\erwin\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.5\build\..\_framework\blazor.web.js
 Components\Layout\ReconnectModal.razor.js
 C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
 C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
@@ -9,10 +9,10 @@ C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\wwwroot\
 C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
 C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
 C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
-C:\Users\erwin\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.4\_framework\blazor.server.js
+C:\Users\erwin\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.5\_framework\blazor.server.js
 C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
 C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
-C:\Users\erwin\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.4\_framework\blazor.web.js
+C:\Users\erwin\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.5\_framework\blazor.web.js
 C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\wwwroot\app.css
 C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
 C:\Users\erwin\source\repos\Financial-Mathematics----UA-2026\Pricer.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
