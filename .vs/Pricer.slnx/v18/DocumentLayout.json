@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B9F8B745-A0E0-CFFA-3513-93C1CE58E094}|Pricer.Numerics\\Pricer.Numerics.csproj|c:\\users\\erwin\\source\\repos\\financial-mathematics----ua-2026\\pricer.numerics\\greeksvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9F8B745-A0E0-CFFA-3513-93C1CE58E094}|Pricer.Numerics\\Pricer.Numerics.csproj|solutionrelative:pricer.numerics\\greeksvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9525F6EF-BDE8-27C5-E546-255749B89A2F}|Pricer.Web\\Pricer.Web.csproj|c:\\users\\erwin\\source\\repos\\financial-mathematics----ua-2026\\pricer.web\\components\\pages\\binomialconvergence.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9525F6EF-BDE8-27C5-E546-255749B89A2F}|Pricer.Web\\Pricer.Web.csproj|solutionrelative:pricer.web\\components\\pages\\binomialconvergence.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9525F6EF-BDE8-27C5-E546-255749B89A2F}|Pricer.Web\\Pricer.Web.csproj|c:\\users\\erwin\\source\\repos\\financial-mathematics----ua-2026\\pricer.web\\components\\pages\\greeks.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9525F6EF-BDE8-27C5-E546-255749B89A2F}|Pricer.Web\\Pricer.Web.csproj|solutionrelative:pricer.web\\components\\pages\\greeks.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B9F8B745-A0E0-CFFA-3513-93C1CE58E094}|Pricer.Numerics\\Pricer.Numerics.csproj|c:\\users\\erwin\\source\\repos\\financial-mathematics----ua-2026\\pricer.numerics\\binomialvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9F8B745-A0E0-CFFA-3513-93C1CE58E094}|Pricer.Numerics\\Pricer.Numerics.csproj|solutionrelative:pricer.numerics\\binomialvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9525F6EF-BDE8-27C5-E546-255749B89A2F}|Pricer.Web\\Pricer.Web.csproj|c:\\users\\erwin\\source\\repos\\financial-mathematics----ua-2026\\pricer.web\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9525F6EF-BDE8-27C5-E546-255749B89A2F}|Pricer.Web\\Pricer.Web.csproj|solutionrelative:pricer.web\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9F8B745-A0E0-CFFA-3513-93C1CE58E094}|Pricer.Numerics\\Pricer.Numerics.csproj|c:\\users\\erwin\\source\\repos\\financial-mathematics----ua-2026\\pricer.numerics\\binomialtree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9F8B745-A0E0-CFFA-3513-93C1CE58E094}|Pricer.Numerics\\Pricer.Numerics.csproj|solutionrelative:pricer.numerics\\binomialtree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Web\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Pricer.Web\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Web\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "Pricer.Web\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-15T11:55:27.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GreeksVisualizer.cs",
-              "DocumentMoniker": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Numerics\\GreeksVisualizer.cs",
-              "RelativeDocumentMoniker": "Pricer.Numerics\\GreeksVisualizer.cs",
-              "ToolTip": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Numerics\\GreeksVisualizer.cs",
-              "RelativeToolTip": "Pricer.Numerics\\GreeksVisualizer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T13:06:12.542Z",
+              "Title": "BinomialConvergence.razor",
+              "DocumentMoniker": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Web\\Components\\Pages\\BinomialConvergence.razor",
+              "RelativeDocumentMoniker": "Pricer.Web\\Components\\Pages\\BinomialConvergence.razor",
+              "ToolTip": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Web\\Components\\Pages\\BinomialConvergence.razor",
+              "RelativeToolTip": "Pricer.Web\\Components\\Pages\\BinomialConvergence.razor",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAmwGwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-15T11:54:09.729Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Greeks.razor",
-              "DocumentMoniker": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Web\\Components\\Pages\\Greeks.razor",
-              "RelativeDocumentMoniker": "Pricer.Web\\Components\\Pages\\Greeks.razor",
-              "ToolTip": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Web\\Components\\Pages\\Greeks.razor",
-              "RelativeToolTip": "Pricer.Web\\Components\\Pages\\Greeks.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJcAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-24T12:28:03.588Z",
+              "Title": "BinomialVisualizer.cs",
+              "DocumentMoniker": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Numerics\\BinomialVisualizer.cs",
+              "RelativeDocumentMoniker": "Pricer.Numerics\\BinomialVisualizer.cs",
+              "ToolTip": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Numerics\\BinomialVisualizer.cs",
+              "RelativeToolTip": "Pricer.Numerics\\BinomialVisualizer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T11:51:10.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BinomialTree.cs",
+              "DocumentMoniker": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Numerics\\BinomialTree.cs",
+              "RelativeDocumentMoniker": "Pricer.Numerics\\BinomialTree.cs",
+              "ToolTip": "C:\\Users\\erwin\\source\\repos\\Financial-Mathematics----UA-2026\\Pricer.Numerics\\BinomialTree.cs",
+              "RelativeToolTip": "Pricer.Numerics\\BinomialTree.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-15T11:48:57.438Z",
               "EditorCaption": ""
             }
           ]

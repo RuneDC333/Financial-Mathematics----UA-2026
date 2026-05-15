@@ -1,0 +1,109 @@
+﻿@page "/binomialconvergence"
+@using MudBlazor
+@using Pricer.Numerics
+
+<MudPaper Class="pa-6 mx-auto" Style="max-width:800px" Elevation="4">
+    <MudText Typo="Typo.h4" GutterBottom="true">
+        Pricing Error: Binomial Tree vs. Black-Scholes
+    </MudText>
+
+    <MudGrid>
+        <MudItem xs="12" md="6">
+            <MudTextField Label="Underlying Price (S)" @bind-Value="underlyingPrice" Immediate="true" />
+            <MudTextField Label="Strike (K)" @bind-Value="strike" Immediate="true" />
+            <MudTextField Label="Interest Rate (r)" @bind-Value="interestRate" Immediate="true" />
+        </MudItem>
+        <MudItem xs="12" md="6">
+            <MudTextField Label="Volatility (σ)" @bind-Value="volatility" Immediate="true" />
+            <MudTextField Label="Time to Maturity (T)" @bind-Value="timeToMaturity" Immediate="true" />
+            <MudSelect T="OptionType" Label="Option Type" @bind-Value="optionType">
+                <MudSelectItem Value="OptionType.Call">Call</MudSelectItem>
+                <MudSelectItem Value="OptionType.Put">Put</MudSelectItem>
+            </MudSelect>
+        </MudItem>
+    </MudGrid>
+
+    <MudDivider Class="my-4" />
+
+    <MudText Typo="Typo.h6">
+        Maximum Steps (n): <b>@maxSteps</b>
+    </MudText>
+
+    <MudSlider T="int" Min="5" Max="150" Step="1"
+               Value="maxSteps"
+               ValueChanged="OnStepsChanged"
+               Class="mb-4" />
+
+    <MudText Typo="Typo.subtitle2" Class="mt-2 mb-1" Align="Align.Center" Color="Color.Primary">
+        <b>Absolute Error |Binomial - Black-Scholes| (Scaled up by ×@_scaleFactor.ToString("F1"))</b>
+    </MudText>
+
+    <MudChart T="double" ChartType="ChartType.Line" ChartSeries="_chartSeries" XAxisLabels="_chartLabels" Width="100%" Height="400px" />
+
+    <MudText Typo="Typo.subtitle2" Align="Align.Center">
+        <b>Number of Steps (n)</b>
+    </MudText>
+
+    <MudText Typo="Typo.caption" Class="mt-4 d-block text-center text-muted">
+        *Note: The error values have been scaled up by a factor of <b>@_scaleFactor.ToString("F1")</b> for visual clarity to fit MudBlazor's fixed axis. As you increase <i>n</i>, you can clearly watch the amplified tracking error decay toward zero.
+    </MudText>
+</MudPaper>
+
+@code {
+    private OptionType optionType = OptionType.Call;
+    private double underlyingPrice = 100;
+    private double strike = 100;
+    private double interestRate = 0.05;
+    private double volatility = 0.2;
+    private double timeToMaturity = 1.0;
+
+    private int maxSteps = 50;
+    private double _scaleFactor = 1.0; // Tracks the multiplier used for layout sizing
+
+    private List<ChartSeries<double>> _chartSeries = new();
+    private string[] _chartLabels = Array.Empty<string>();
+
+    protected override void OnInitialized()
+    {
+        GenerateChart();
+    }
+
+    private void OnStepsChanged(int value)
+    {
+        maxSteps = value;
+        GenerateChart();
+    }
+
+    private void GenerateChart()
+    {
+        // 1. Fetch raw absolute errors from the visualizer
+        var (stepsList, absoluteErrors) = BinomialVisualizer.GenerateErrorConvergenceData(
+            optionType, underlyingPrice, strike, timeToMaturity, interestRate, volatility, maxSteps);
+
+        if (absoluteErrors.Count > 0)
+        {
+            double maxError = absoluteErrors.Max();
+
+            // 2. Calculate scale factor to amplify the highest error point up to 18.0
+            // This fills out MudBlazor's default 0-20 axis grid gracefully.
+            _scaleFactor = maxError > 0 ? (18.0 / maxError) : 1.0;
+        }
+        else
+        {
+            _scaleFactor = 1.0;
+        }
+
+        // 3. Project the scaled errors onto the chart array
+        var scaledErrors = absoluteErrors.Select(err => err * _scaleFactor).ToList();
+
+        _chartSeries = new List<ChartSeries<double>>
+        {
+            new ChartSeries<double> { Name = "Scaled Convergence Decay", Data = scaledErrors }
+        };
+
+        // 4. Set cleaner step subdivisions along X-axis
+        _chartLabels = stepsList.Select(n => n % 10 == 0 ? n.ToString() : "").ToArray();
+
+        StateHasChanged();
+    }
+}

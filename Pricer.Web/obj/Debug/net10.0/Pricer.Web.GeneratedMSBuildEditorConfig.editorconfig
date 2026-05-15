@@ -29,6 +29,10 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/erwin/source/repos/Financial-Mathematics----UA-2026/Pricer.Web/Components/Pages/BinomialConvergence.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCaW5vbWlhbENvbnZlcmdlbmNlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/erwin/source/repos/Financial-Mathematics----UA-2026/Pricer.Web/Components/Pages/BlackScholesPricer.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCbGFja1NjaG9sZXNQcmljZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
